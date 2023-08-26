@@ -1,8 +1,12 @@
 @import '../../styles/index.scss';
 
-.count {
+.jokes {
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 60px;
+
+  @include breakpoint('tablet') {
+    flex-flow: row wrap;
+  }
 }

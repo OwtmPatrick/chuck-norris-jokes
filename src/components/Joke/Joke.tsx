@@ -6,16 +6,16 @@ import styles from './styles.module.scss';
 
 interface JokeProps {
   joke: JokeType;
-  isSmall: boolean;
+  isLarge: boolean;
 }
 
-export const Joke: FC<JokeProps> = ({ joke, isSmall }) => {
+export const Joke: FC<JokeProps> = ({ joke, isLarge }) => {
   const { id, value, url, created_at, updated_at } = joke;
 
   return (
-    <div className={cn(styles.joke, { isSmall })}>
-      <a href={url} className={cn(styles.link, { isSmall })}>
-        <h3 className={styles.title}>{value}</h3>
+    <div className={cn(styles.joke, { large: isLarge })}>
+      <a href={url} className={styles.link}>
+        <h3 className={cn(styles.title, { large: isLarge })}>{value}</h3>
       </a>
       <div className={styles.bottomWrapper}>
         <span>{id}</span>

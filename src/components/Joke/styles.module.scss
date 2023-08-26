@@ -1,15 +1,29 @@
 @import '../../styles/index.scss';
 
 .joke {
+  box-sizing: border-box;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 30px;
   padding-bottom: 25px;
   box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.2);
   font-family: $firaSans;
-  transition: opacity 0.25s;
+  transition: box-shadow 0.25s;
 
   &:hover {
-    opacity: 0.85;
+    box-shadow: 0px 7px 25px 0px rgba(100, 100, 111, 0.5);
+  }
+
+  @include breakpoint('tablet') {
+    width: calc(50% - 10px);
+  }
+
+  &:global(.large) {
+    @include breakpoint('desktop') {
+      width: calc((100% - 40px) / 3);
+    }
   }
 }
 
@@ -28,16 +42,30 @@
 
 .title {
   margin: 0;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 24px;
   color: $black;
+
+  &:global(.large) {
+    @include breakpoint('desktop') {
+      margin-bottom: 60px;
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
 }
 
 .bottomWrapper {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  gap: 10px;
   justify-content: space-between;
-  margin-top: 30px;
   font-family: $montserrat;
   font-size: 14px;
+
+  @include breakpoint('mobile') {
+    flex-direction: row;
+    align-items: center;
+  }
 }
