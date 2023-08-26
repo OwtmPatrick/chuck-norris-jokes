@@ -62,7 +62,13 @@
       }
     ],
     "import/no-extraneous-dependencies": ["off"],
-    "no-use-before-define": ["off"]
+    "no-use-before-define": ["off"],
+    "react/function-component-definition": [
+      1,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ]
   },
   "overrides": [
     {

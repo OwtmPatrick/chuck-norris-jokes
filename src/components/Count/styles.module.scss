@@ -1,0 +1,12 @@
+@import '../../styles/index.scss';
+
+.count {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 626px;
+  padding-left: 30px;
+  margin-top: 20px;
+  font-family: $montserrat;
+  font-size: 16px;
+  color: $black;
+}

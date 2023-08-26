@@ -1,7 +1,6 @@
-import './App.css';
+import './styles/normalize.css';
+import { Layout } from './components/layout/Layout';
 
-function App() {
-  return <>test</>;
-}
+const App = () => <Layout />;
 
 export default App;

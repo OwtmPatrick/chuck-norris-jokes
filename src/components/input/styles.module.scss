@@ -1,0 +1,20 @@
+@import '../../styles/index.scss';
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  max-width: 626px;
+  padding: 20px 30px;
+  filter: drop-shadow(0px 7px 12px rgba(100, 100, 111, 0.2));
+  font-family: $firaSans;
+  font-size: 20px;
+  font-weight: 700;
+  border: 0;
+  outline: none;
+  color: $purple;
+
+  &::placeholder {
+    color: $purple;
+  }
+}
