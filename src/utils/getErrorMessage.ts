@@ -1,5 +1,6 @@
 import { SerializedError } from '@reduxjs/toolkit';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/dist/query';
+import { DEFAULT_ERROR_MESSAGE } from '../components/constants';
 
 export const getErrorMessage = (error: FetchBaseQueryError | SerializedError): string => {
   if ('data' in error) {
@@ -10,5 +11,5 @@ export const getErrorMessage = (error: FetchBaseQueryError | SerializedError): s
     return error.message as string;
   }
 
-  return 'Unable to fetch data';
+  return DEFAULT_ERROR_MESSAGE;
 };
