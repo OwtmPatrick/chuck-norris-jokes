@@ -14,7 +14,7 @@ export const Joke: FC<JokeProps> = ({ joke, isLarge }) => {
   const { id, value, url, created_at, updated_at } = joke;
 
   return (
-    <div className={cn(styles.joke, { large: isLarge })}>
+    <li className={cn(styles.joke, { large: isLarge })}>
       <a href={url} className={styles.link} target="_blank" rel="noreferrer">
         <h3 className={cn(styles.title, { large: isLarge })}>{value}</h3>
       </a>
@@ -22,6 +22,6 @@ export const Joke: FC<JokeProps> = ({ joke, isLarge }) => {
         <span>{id}</span>
         <span>{formatDate(updated_at ?? created_at)}</span>
       </div>
-    </div>
+    </li>
   );
 };
