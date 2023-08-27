@@ -5,12 +5,12 @@ import { Jokes } from '../Jokes/Jokes';
 import { useJokes } from '../../hooks/useJokes';
 
 export const Container = () => {
-  const { getJokes, data } = useJokes();
+  const { fetchJokes, data } = useJokes();
 
   return (
     <main className={styles.main}>
-      <Input getJokes={getJokes} />
-      {data?.total && <Count value={data.total} />}
+      <Input fetchJokes={fetchJokes} />
+      {data && 'total' in data && <Count value={data.total} />}
       <Jokes jokes={data?.result ?? []} />
     </main>
   );
