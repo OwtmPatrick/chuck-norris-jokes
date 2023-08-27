@@ -1,17 +1,15 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, FC } from 'react';
 import styles from './styles.module.scss';
-import { jokeApi } from '../../services/joke';
 
-export const Input = () => {
-  const { useLazyGetJokesQuery } = jokeApi;
-  const [getJokes, { data }] = useLazyGetJokesQuery();
+interface InputProps {
+  getJokes: (query: string) => void;
+}
 
-  console.log('data: ', data);
-
+export const Input: FC<InputProps> = ({ getJokes }) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
 
-    if (value.length > 3) {
+    if (value.length >= 3) {
       getJokes(value);
     }
   };

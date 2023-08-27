@@ -5,7 +5,7 @@ export const jokeApi = createApi({
   reducerPath: 'pokemonApi',
   baseQuery: fetchBaseQuery({ baseUrl: 'https://api.chucknorris.io/' }),
   endpoints: (builder) => ({
-    getJokes: builder.query<Joke, string>({
+    getJokes: builder.query<{ result: Joke[]; total: number }, string>({
       query: (query) => `jokes/search?query=${query}`
     })
   })

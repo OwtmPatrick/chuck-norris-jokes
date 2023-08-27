@@ -1,11 +1,11 @@
 import { Provider } from 'react-redux';
 import './styles/normalize.css';
-import { Layout } from './components/layout/Layout';
+import { Container } from './components/Container/Container';
 import { store } from './store';
 
 const App = () => (
   <Provider store={store}>
-    <Layout />
+    <Container />
   </Provider>
 );
 

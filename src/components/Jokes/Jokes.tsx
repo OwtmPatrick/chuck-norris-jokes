@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Joke as JokeType } from '../../types';
+import type { Joke as JokeType } from '../../types';
 import { Joke } from '../Joke/Joke';
 import styles from './styles.module.scss';
 
